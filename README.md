@@ -13,6 +13,6 @@ I am familiar with web development but the majority of my strengths are in back-
 I have a few years worth of experience with a variety of programming languages - JavaScript being one of them.
 I enjoy programming behaviour and functionality. Handling front-end visuals is a bit tedious to me.
 
-#Christine Huynh
+# Christine Huynh
 I think my primary strengths in is front end developement, using HTML and artistic aspects of designing a website. 
 I have a good understanding of programming although CSS and JavaScript are relatively new to me, but I can pick up concepts quite easily.
