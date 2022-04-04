@@ -1,4 +1,4 @@
-# NOT FINAL ITMD-362 Project Two Team Contract NOT FINAL
+# ITMD-362 Project Two Team Contract
 
 This is the team contract for Project Two in ITMD-362 Spring 2022. 
 
@@ -23,4 +23,4 @@ Any members that have signed this contract, and fail to abide by the stipulation
 Further failure to comply will result in removal from the group, with approval from the instructor, and the offending member will not be given any chance to rejoin the group after the due date of the project.
 
 ## Please Sign Below
-Signatures will be required on the final version of this contract.
+
