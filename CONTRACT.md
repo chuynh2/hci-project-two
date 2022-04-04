@@ -23,4 +23,4 @@ Any members that have signed this contract, and fail to abide by the stipulation
 Further failure to comply will result in removal from the group, with approval from the instructor, and the offending member will not be given any chance to rejoin the group after the due date of the project.
 
 ## Please Sign Below
-
+- Andrei Neacsu
