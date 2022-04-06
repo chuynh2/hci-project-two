@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Nunito&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/screen.css" />
+  <title>Cybersecurity StartUp</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <ol>
+        <li id="company">
+          <a href="../">CYBERSTART SECURITY</a>
+        </li>
+        <ol id="pages">
+          <li>
+            <a href="../">Home</a>
+          </li>
+          <li>
+            <a href="../cart/">Cart</a>
+          </li>
+        </ol>
+      </ol>
+    </nav>
+  </header>
+  <form id="cart" action="../checkout">
+    <section id="cart-items-container">
+      <ul id="cart-items">
+        <header>
+          <h1>Shopping Cart (3 Items)</h1>
+        </header>
+        <ul class="cart-item">
+          <img class="icon" src="../assets/img/trophy.png" alt="Certificate Image" />
+          <ul class="details">
+            <li class="title">
+              Super Hacker Certification
+            </li>
+            <li class="description">
+              This certification will turn you into a 1337 hacker.
+            </li>
+          </ul>
+          <li class="misc">
+            <h2 class="price">$300</h2>
+            <input type="button" class="remove" value="Remove" />
+            <input type="button" class="edit" value="Edit" />
+          </li>
+        </ul>
+        <ul class="cart-item">
+          <img class="icon" src="../assets/img/trophy.png" alt="Certificate Image" />
+          <ul class="details">
+            <li class="title">
+              Super Hacker Certification 2
+            </li>
+            <li class="description">
+              This certification will turn you into a 31337 hacker.
+            </li>
+          </ul>
+          <li class="misc">
+            <h2 class="price">$300</h2>
+            <input type="button" class="remove" value="Remove" />
+            <input type="button" class="edit" value="Edit" />
+          </li>
+        </ul>
+        <ul class="cart-item">
+          <img class="icon" src="../assets/img/trophy.png" alt="Certificate Image" />
+          <ul class="details">
+            <li class="title">
+              Super Hacker Certification 3
+            </li>
+            <li class="description">
+              This certification will turn you into a 2312 hacker.
+            </li>
+          </ul>
+          <li class="misc">
+            <h2 class="price">$300</h2>
+            <input type="button" class="remove" value="Remove" />
+            <input type="button" class="edit" value="Edit" />
+          </li>
+        </ul>
+      </ul>
+    </section>
+    <section id="cart-summary-container">
+      <section id="cart-summary" action="../checkout">
+        <section id="directions">
+          <a id="keep-shop" href="../">Keep Shopping</a>
+          <input id="check-out" type="submit" value="Continue" />
+        </section>
+        <header>
+          <h1>Summary</h1>
+        </header>
+        <ol id="cost-listing">
+          <li>
+            <p class="category">Subtotal:</p>
+            <p class="value">$13.58</p>
+          </li>
+          <li>
+            <p class="category">Service Fee:</p>
+            <p class="value">$300</p>
+          </li>
+          <li>
+            <p class="category">Tax:</p>
+            <p class="value">$300</p>
+          </li>
+        </ol>
+        <ol id="total">
+          <li>
+            <p class="category">Total:</p>
+            <p class="value">$300</p>
+          </li>
+        </ol>
+      </section>
+    </section>
+  </form>
+  <script src="../assets/js/site.js"></script>
+</body>
+</html>

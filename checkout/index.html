@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Nunito&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/screen.css" />
+  <title>Cybersecurity StartUp</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <ol>
+        <li id="company">
+          <a href="../">CYBERSTART SECURITY</a>
+        </li>
+        <ol id="pages">
+          <li>
+            <a href="../">Home</a>
+          </li>
+          <li>
+            <a href="../cart/">Cart</a>
+          </li>
+        </ol>
+      </ol>
+    </nav>
+  </header>
+  <form id="checkout" action="../order-confirmation/">
+    <section id="shipping-container">
+      <section id="shipping">
+        <header>
+          Shipping
+        </header>
+        <ul class="form-body">
+          <li>
+            <label for="fullname-s">Full name</label>
+            <input type="text" id="fullname-s" placeholder="Your name..." required />
+          </li>
+          <li>
+            <label for="address-s">Address</label>
+            <input type="text" id="address-s" placeholder="Street address or P.O. Box" required />
+            <label for="address2-s">Address 2</label>
+            <input type="text" id="address2-s" placeholder="Apt, suite, unit, building, floor, etc." />
+          </li>
+          <li>
+            <label for="country-s">Country</label>
+            <select type="text" id="country-s">
+              <option value="US">United States</option>
+            </select>
+          </li>
+          <ul class="location">
+            <li>
+              <label for="city-s">City</label>
+              <input type="text" id="city-s" placeholder="City" required />
+            </li>
+            <li>
+              <label for="state-s">State</label>
+              <input type="text" id="state-s" placeholder="State" required />
+            </li>
+            <li>
+              <label for="zip-s">Zip Code</label>
+              <input type="number" id="zip-s" placeholder="Postal / Zip Code" required />
+            </li>
+          </ul>
+          <li>
+            <label for="phone-s">Phone</label>
+            <input type="tel" id="phone-s" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="###-###-####" required />
+          </li>
+        </ul>
+      </section>
+    </section>
+    <section id="billing-container">
+      <section id="billing">
+        <header>
+          Billing
+        </header>
+        <ul class="form-body">
+          <li>
+            <label for="cardnumber">Card Number</label>
+            <input type="number" id="cardnumber" required />
+          </li>
+          <li>
+            <label for="cardname">Name on card</label>
+            <input type="text" id="cardname" required />
+          </li>
+          <li></li>
+          <ul>
+            <li>
+              <label for="expiration">Expiration date</label>
+            <input type="month" id="expiration" required />
+            </li>
+            <li>
+              <label for="cvv">CVV</label>
+            <input type="number" id="cvv" placeholder="XXX" pattern="[0-9]{3}" required />
+            </li>
+          </ul>
+          <ul>
+            <input type="checkbox" id="show-address-b" id="show-address-b" />
+            <label for="show-address-b">Enter a new address</label>
+            <ul id="address-b-form">
+              <li>
+                <label for="address-b">Address</label>
+                <input type="text" id="address-b" placeholder="Street address or P.O. Box" required />
+                <label for="address2-b">Address 2</label>
+                <input type="text" id="address2-b" placeholder="Apt, suite, unit, building, floor, etc." />
+              </li>
+              <li>
+                <label for="country-b">Country</label>
+                <select type="text" id="country-b">
+                  <option value="US">United States</option>
+                </select>
+              </li>
+              <ul class="location">
+                <li>
+                  <label for="city-b">City</label>
+                  <input type="text" id="city-b" placeholder="City" />
+                </li>
+                <li>
+                  <label for="state-b">State</label>
+                  <input type="text" id="state-b" placeholder="State" />
+                </li>
+                <li>
+                  <label for="zip-b">Zip Code</label>
+                  <input type="text" id="zip-b" placeholder="Postal / Zip Code" />
+                </li>
+              </ul>
+            </ul>
+          </ul>
+        </ul>
+      </section>
+    </section>
+    <section id="cart-summary-container">
+      <section id="cart-summary">
+        <section id="directions">
+          <a id="keep-shop" href="../cart">Edit Cart</a>
+          <input id="check-out" type="submit" value="Complete" />
+        </section>
+        <header>
+          <h1>Summary</h1>
+        </header>
+        <ol id="cost-listing">
+          <li>
+            <p class="category">Subtotal:</p>
+            <p class="value">$13.58</p>
+          </li>
+          <li>
+            <p class="category">Service Fee:</p>
+            <p class="value">$300</p>
+          </li>
+          <li>
+            <p class="category">Tax:</p>
+            <p class="value">$300</p>
+          </li>
+        </ol>
+        <ol id="total">
+          <li>
+            <p class="category">Total:</p>
+            <p class="value">$300</p>
+          </li>
+        </ol>
+      </section>
+    </section>
+  </form>
+  <script src="../assets/js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+{
+  "id": "backstop_default",
+  "viewports": [
+    {
+      "label": "phone",
+      "width": 360,
+      "height": 480
+    },
+    {
+      "label": "tablet",
+      "width": 810,
+      "height": 1080
+    },
+    {
+      "label": "desktop",
+      "width": 1920,
+      "height": 1080
+    }
+  ],
+  "onReadyScript": "assets/js/site.js",
+  "scenarios": [
+    {
+      "label": "Home",
+      "url": "http://localhost:5500/hci-project-one/"
+    },
+    {
+      "label": "Cart",
+      "url": "http://localhost:5500/hci-project-one/cart"
+    },
+    {
+      "label": "Checkout",
+      "url": "http://localhost:5500/hci-project-one/checkout"
+    },
+    {
+      "label": "Confirmation",
+      "url": "http://localhost:5500/hci-project-one/order-confirmation"
+    }
+  ],
+  "paths": {
+    "bitmaps_reference": "backstop_data/bitmaps_reference",
+    "bitmaps_test": "backstop_data/bitmaps_test",
+    "engine_scripts": "backstop_data/engine_scripts",
+    "html_report": "backstop_data/html_report",
+    "ci_report": "backstop_data/ci_report"
+  },
+  "report": ["browser"],
+  "engine": "puppeteer",
+  "engineOptions": {
+    "args": ["--no-sandbox"]
+  },
+  "asyncCaptureLimit": 5,
+  "asyncCompareLimit": 50,
+  "debug": false,
+  "debugWindow": false
+}
