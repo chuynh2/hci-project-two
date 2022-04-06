@@ -25,3 +25,4 @@ Further failure to comply will result in removal from the group, with approval f
 ## Please Sign Below
 - Andrei Neacsu
 - Christine Huynh
+- Tyree Spears
