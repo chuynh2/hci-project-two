@@ -1,0 +1,386 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+/* stylelint-disable */
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section{display:block}html{line-height:1}body{line-height:inherit}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+/* stylelint-enable */
+
+/* Begin site styles below */ 
+:root {
+  --dark-color: #171717;
+  --light-color: #f3f3f3;
+  --lightest-color: #ffffff;
+  --purple: rgb(100, 26, 185);
+  --red: rgb(255, 0, 0);
+}
+
+header {
+  font: 1em 'DM Serif Display', serif;
+}
+
+section {
+  font: 1em 'Nunito', sans-serif;
+  margin-bottom: 1em;
+}
+
+
+body {
+  background-color: var(--light-color);
+}
+
+nav {
+  font-size: 1rem;
+  background-color: var(--dark-color);
+  display: flex;
+}
+
+nav #company a {
+  color: var(--purple);
+  background: -webkit-linear-gradient(45deg, var(--purple), var(--red));
+  background-clip: unset;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+nav ol {
+  display: flex;
+}
+
+nav > ol {
+  flex-basis: 100%;
+}
+
+nav ol li {
+  text-align: center;
+  padding: 1em;
+}
+
+#company {
+  font-size: 1.625em;
+}
+
+#pages {
+  margin-left: auto;
+}
+
+#pages li {
+  margin: auto 0 auto;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+form, main {
+  display: flex;
+  padding-top: 1.5em;
+  flex-wrap: wrap;
+}
+
+form > section, main > section {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border-radius: 2px;
+}
+
+#cart-items-container, #shipping-container, #billing-container {
+  margin: 0 auto 0 auto;
+  flex-basis: 100%;
+  padding: 0.9375em;
+}
+
+#shipping-container {
+  order: 1;
+}
+
+#billing-container {
+  order: 2;
+}
+
+#cart-summary-container {
+  order: 3;
+  flex-basis: 100%;
+  padding: 0.9375em;
+  margin: 0 auto 0 auto;
+}
+
+
+main > section, #cart-items, #cart-summary, #shipping, #billing {  
+  display: flex;
+  flex-direction: column;
+  background-color: var(--lightest-color);
+  padding: 1.5em;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: min-content auto;
+  margin-top: .5em;
+}
+
+.cart-item .icon {
+  grid-row: span 3;
+  max-width: 9.375em;
+}
+
+.cart-item .details {
+  margin-top: 1em;
+}
+
+.details {
+  grid-row: span 2;
+}
+
+.details .title {
+  line-height: 1.5em;
+  font-weight: 600;
+}
+
+.cart-item .misc {
+  display: flex;
+  flex-direction: row;
+  text-align: right;
+  margin-top: auto
+}
+
+.cart-item .misc .price {
+  margin-right: auto;
+  font-weight: 600;
+}
+
+
+.cart-item .misc input[type="button"] {
+  border: none;
+  background: none;
+}
+
+.remove {
+  border-radius: 0;
+  border-right: 1px solid black !important;
+}
+
+.remove, .edit {
+  color: red
+}
+
+a:hover, .remove:hover, .edit:hover {
+  text-decoration: underline;
+}
+
+#directions {
+  display: flex;
+}
+
+#directions input[type="submit"], #directions a {
+  flex-basis: 50%;
+  font-weight: 500;
+  color: var(--red);
+  background-color: white;
+  border-radius: 3px;
+  border: 1px solid var(--red);
+  padding: 1em 2em;
+  margin: 2px;
+  text-align: center;
+}
+
+#directions #keep-shop {
+  color: var(--red);
+  background-color: white;
+  flex-basis: 35%;
+}
+
+#directions #check-out {
+  color: white;
+  background-color: var(--red);
+}
+
+#cart-summary header {
+  margin-top: 1em;
+}
+
+#cost-listing {
+  display: flex;
+  flex-direction: column;
+  padding: 1em 0 1em 0;
+  margin-top: .25em;
+  border-top: .1em solid var(--dark-color);
+  border-bottom: .1em solid var(--dark-color);
+}
+
+#cost-listing li, #total li {
+  display: flex;
+  width: 100%;
+}
+
+#cost-listing li p, #total li p {
+  flex-basis: 50%;
+  margin: .2em 0 .2em 0;
+}
+
+#total {
+  margin-top: 1.5em;
+}
+
+.category {
+  font-weight: 600;
+  text-align: left;
+}
+
+.value {
+  text-align: right;
+}
+
+section > header, #cart-items > header {
+  font-weight: 600;
+  margin-bottom: .25em;
+}
+
+.form-body {
+  display: flex;
+  flex-direction: column;
+  margin-left: .75em;
+}
+
+.form-body li {
+  display: flex;
+  flex-direction: column;
+  margin-top: .5em;
+}
+
+.form-body li label {
+  flex-basis: 20%;
+}
+
+.form-body li input {
+  flex-basis: 80%;
+}
+
+.form-body  {
+  display: flex;
+}
+
+.location {
+  display: flex;
+  flex-basis: 100%;
+  flex-direction: column;
+  margin-top: .5em;
+}
+
+.location li {
+  flex-direction: column;
+  margin-top: .3em;
+  margin-right: .2em;
+}
+
+.location li:nth-child(n) {
+  flex-basis: 33%;
+}
+
+.location li:last-child {
+  margin-right: 0;
+}
+
+#show-address-b {
+  margin-top: 1em;
+}
+
+#show-address-b:not(:checked) ~ #address-b-form  {
+  visibility: collapse;
+  display: none
+}
+
+input {
+  border: 1px solid #7e7e7e;
+  border-radius: 3px;
+  margin-top: .2em;
+}
+
+input {
+  padding: .5em;
+}
+
+#phone-s {
+  width: 10em
+}
+
+#cvv {
+  width: 5em
+}
+
+#homescreen {
+  flex-direction: column;
+}
+
+#homescreen a {
+  color: red;
+}
+
+#homescreen a:hover {
+  text-decoration: underline;
+}
+
+#order-confirmation {
+  text-align: center;
+}
+
+#order-confirmation section {
+ flex-basis: 100%;
+}
+
+header {
+  font-size: 1.5em;
+  text-decoration: none;
+}
+
+#order-confirmation p {
+  font-size: 1.5em;
+  text-decoration: none;
+}
+
+
+@media screen and (min-width: 45.3125em) { /* 725 px, 16 pt */
+  .location {
+    flex-direction: row;
+  }
+
+  #cart-items-container, #shipping-container, #billing-container, #cart-summary-container {
+    flex-basis: 90%;
+  }
+
+  #cart-summary-container {
+    margin: 0 auto 0 auto;
+  }
+}
+
+@media screen and (min-width: 75em) { /* 1200 px, 16 pt */
+  #billing-container {
+    order: 3
+  }
+
+  #cart-items, #cart-summary, #shipping, #billing {  
+    display: flex;
+    flex-direction: column;
+    background-color: var(--lightest-color);
+    padding: 1.5em;
+  }
+
+  #cart-items-container, #shipping-container, #billing-container {
+    margin: 0;
+    flex-basis: 60%;
+  }
+
+  .location li {
+    flex-direction: column;
+    margin-top: .0;
+    margin-right: .2em;
+  }
+
+  #cart-summary-container {
+    order: 2;
+    flex-basis: 35%;
+    padding: 0.9375em;
+  }
+}
