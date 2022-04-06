@@ -7,7 +7,7 @@ All team members must sign this contract at the bottom and submit it as a pull r
 ## Communication
 All members must keep in contact throughout the project's duration.
 Any member without any sort of communication through either Discord or other means will be contacted through email after 1 week.
-If not response is recorded then all other team members will decide
+If no response is recorded then all other team members will decide an appropriate action.
 
 ## Contribution
 Each member must contribute a reasonable amount of work to either the HTML, CSS or JavaScript of the project.
@@ -26,3 +26,4 @@ Further failure to comply will result in removal from the group, with approval f
 - Andrei Neacsu
 - Christine Huynh
 - Asude Ozturk
+- Tyree Spears
