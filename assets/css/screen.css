@@ -6,7 +6,7 @@
 a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section{display:block}html{line-height:1}body{line-height:inherit}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
 /* stylelint-enable */
 
-/* Begin site styles below */ 
+/* Begin site styles below */
 :root {
   --dark-color: #171717;
   --light-color: #f3f3f3;
@@ -108,7 +108,7 @@ form > section, main > section {
 }
 
 
-main > section, #cart-items, #cart-summary, #shipping, #billing {  
+main > section, #cart-items, #cart-summary, #shipping, #billing, .products {
   display: flex;
   flex-direction: column;
   background-color: var(--lightest-color);
@@ -121,7 +121,7 @@ main > section, #cart-items, #cart-summary, #shipping, #billing {
   margin-top: .5em;
 }
 
-.cart-item .icon {
+.cart-item .icon, .product-image {
   grid-row: span 3;
   max-width: 9.375em;
 }
@@ -340,6 +340,52 @@ header {
   text-decoration: none;
 }
 
+#certifications {
+  //background-color: transparent;
+}
+
+.products {
+    box-shadow: 0.3em 0.3em 0.5em -0.5em #aaa,
+    -0.3em -0.3em 0.3em -0.5em #aaa;
+
+}
+.product-image {
+  align-self: center;
+}
+
+.product-title, .product-price {
+  font-weight: 600;
+}
+.product-detail {
+  height: 100%;
+}
+.product-misc {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.add-to-cart {
+  background: none;
+  border: 1px solid #aaa;
+  border-radius: 2px;
+  cursor: pointer;
+  font-family: inherit;
+}
+.add-to-cart:hover {
+  background-color: var(--purple);
+  color: var(--light-color);
+  border-color: transparent;
+}
+
+@media screen and (min-width: 28.125em) { /* 450 px, 16 pt */
+  #product-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1em;
+  }
+
+}
 
 @media screen and (min-width: 45.3125em) { /* 725 px, 16 pt */
   .location {
@@ -355,12 +401,19 @@ header {
   }
 }
 
+@media screen and (min-width: 51.5625em) { /* 825 px, 16 pt */
+  #product-list {
+    grid-template-columns: repeat(3,1fr);
+  }
+}
+
+
 @media screen and (min-width: 75em) { /* 1200 px, 16 pt */
   #billing-container {
     order: 3
   }
 
-  #cart-items, #cart-summary, #shipping, #billing {  
+  #cart-items, #cart-summary, #shipping, #billing {
     display: flex;
     flex-direction: column;
     background-color: var(--lightest-color);
@@ -382,5 +435,9 @@ header {
     order: 2;
     flex-basis: 35%;
     padding: 0.9375em;
+  }
+
+  #product-list {
+    grid-template-columns: repeat(4,1fr);
   }
 }
