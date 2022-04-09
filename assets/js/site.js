@@ -26,8 +26,8 @@ var cartProducts = {
     desc: "This certification will turn you into a ultra hacker.",
     price: 600
   },
-  "Ultra Hacker Certification": {
-    desc: "This certification will turn you into a ultra hacker.",
+  "Ultra Plus Hacker Certification": {
+    desc: "This certification will turn you into a ultra plus hacker.",
     price: 700
   },
   "Ethical Hacker Certification": {
