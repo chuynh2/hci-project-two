@@ -33,54 +33,7 @@
         <header>
           <h1>Shopping Cart (3 Items)</h1>
         </header>
-        <ul class="cart-item">
-          <img class="icon" src="../assets/img/trophy.png" alt="Certificate Image" />
-          <ul class="details">
-            <li class="title">
-              Super Hacker Certification
-            </li>
-            <li class="description">
-              This certification will turn you into a 1337 hacker.
-            </li>
-          </ul>
-          <li class="misc">
-            <h2 class="price">$300</h2>
-            <input type="button" class="remove" value="Remove" />
-            <input type="button" class="edit" value="Edit" />
-          </li>
-        </ul>
-        <ul class="cart-item">
-          <img class="icon" src="../assets/img/trophy.png" alt="Certificate Image" />
-          <ul class="details">
-            <li class="title">
-              Super Hacker Certification 2
-            </li>
-            <li class="description">
-              This certification will turn you into a 31337 hacker.
-            </li>
-          </ul>
-          <li class="misc">
-            <h2 class="price">$300</h2>
-            <input type="button" class="remove" value="Remove" />
-            <input type="button" class="edit" value="Edit" />
-          </li>
-        </ul>
-        <ul class="cart-item">
-          <img class="icon" src="../assets/img/trophy.png" alt="Certificate Image" />
-          <ul class="details">
-            <li class="title">
-              Super Hacker Certification 3
-            </li>
-            <li class="description">
-              This certification will turn you into a 2312 hacker.
-            </li>
-          </ul>
-          <li class="misc">
-            <h2 class="price">$300</h2>
-            <input type="button" class="remove" value="Remove" />
-            <input type="button" class="edit" value="Edit" />
-          </li>
-        </ul>
+        <!-- CART ITEMS HERE -->
       </ul>
     </section>
     <section id="cart-summary-container">
@@ -94,22 +47,22 @@
         </header>
         <ol id="cost-listing">
           <li>
-            <p class="category">Subtotal:</p>
-            <p class="value">$13.58</p>
+            <p class="category" id="cost-subtotal">Subtotal:</p>
+            <p class="value">$0</p>
           </li>
           <li>
-            <p class="category">Service Fee:</p>
-            <p class="value">$300</p>
+            <p class="category" id="cost-fee">Service Fee:</p>
+            <p class="value">$0</p>
           </li>
           <li>
-            <p class="category">Tax:</p>
-            <p class="value">$300</p>
+            <p class="category" id="cost-tax">Tax:</p>
+            <p class="value">$0</p>
           </li>
         </ol>
         <ol id="total">
           <li>
-            <p class="category">Total:</p>
-            <p class="value">$300</p>
+            <p class="category" id="cost-total">Total:</p>
+            <p class="value">$0</p>
           </li>
         </ol>
       </section>
