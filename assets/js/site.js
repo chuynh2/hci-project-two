@@ -34,7 +34,7 @@ var cartProducts = {
     desc: "This certification will turn you into a ethical hacker.",
     price: 300
   },
-  "White Hacker Certification": {
+  "White Hat Hacker Certification": {
     desc: "This certification will turn you into a white hacker.",
     price: 450
   },
@@ -42,11 +42,11 @@ var cartProducts = {
     desc: "This certification will turn you into a teacher hacker.",
     price: 250
   },
-  "Penetration Hacker Certification": {
+  "Penetration Tester Certification": {
     desc: "This certification will turn you into a penetration hacker.",
     price: 200
   },
-  "Offensive Hacker Certification": {
+  "Offensive Security Certification": {
     desc: "This certification will turn you into a offensive hacker.",
     price: 350
   }
@@ -89,6 +89,7 @@ function cartAddProduct(name, quantity=1) {
   }
 
   updateCartLink();
+  updatePopupList();
   saveCartToStorage();
   return true;
 }
@@ -350,4 +351,87 @@ if (pageForm && pageForm.id == "checkout") { // Apply to checkout webpage
   billingCheckbox.addEventListener("click", function() { // Handle state changes
     toggleBillingAddressValidation(billingCheckbox.checked)
   })
+}
+
+
+// === Cart Popup ===
+var cartPopup = document.querySelector("#cart-popup");
+cartPopup.setAttribute('aria-hidden', 'true');
+cartPopup.setAttribute('disabled', 'disabled');
+
+addProductsToPopup();
+
+var addCartButton = document.querySelectorAll(".add-to-cart");
+addCartButton.forEach(item => {
+  item.addEventListener("click", showPopup);
+  item.addEventListener("click", debounce(closePopup, 3000));
+});
+
+function showPopup(event) {
+  window.scrollTo(0, 0);
+  updatePopupList(this);
+  this.classList.add('added-item');
+  cartPopup.setAttribute('aria-hidden', 'false');
+  cartPopup.removeAttribute('disabled');
+
+  let templateHTML = `
+      <img src="assets/img/checked.png" alt="success tick logo"/>
+      <figcaption class="nav-heading current-page-heading">Added to cart</figcaption>`;
+  if(!document.getElementById("success-message")){
+    var successMessage = document.createElement("figure");
+    successMessage.setAttribute("id", "success-message");
+    successMessage.innerHTML= templateHTML;
+    cartPopup.prepend(successMessage);
+  }
+}
+
+function closePopup(){
+  this.classList.remove('added-item');
+  cartPopup.setAttribute('aria-hidden', 'true');
+  cartPopup.setAttribute('disabled', 'disabled');
+  document.querySelector("#success-message").remove();
+}
+
+function addProductsToPopup() {
+  let templateHTML = `
+    <ul>
+      <li class="popup-img">
+        <img class="icon" src="../assets/img/trophy.png" alt="Certificate Image">
+      </li>
+      <li class="popup-title"></li>
+      <li class="popup-count"></li>
+      <li class="popup-price"></li>
+    </ul>`;
+
+  var popupList = document.querySelector("#cart-popup ol");
+  for (const [title, count] of Object.entries(cart)) {
+    var product = document.createElement("li");
+    product.className = "popup-product";
+    product.innerHTML = templateHTML;
+    product.querySelector(".popup-title").innerText= title;
+    product.querySelector(".popup-count").innerText= "Quantity: " + count;
+    product.querySelector(".popup-price").innerText= "$" + (cartProducts[title].price*count);
+    popupList.appendChild(product);
+  }
+}
+
+function updatePopupList() {
+  var popupProducts = document.querySelectorAll("#cart-popup ol li");
+  popupProducts.forEach(item => {
+    item.remove();
+  });
+  addProductsToPopup();
+}
+
+function debounce(callback, delay) {
+  var timer;
+  return function() {
+    var context = this;
+    var args = arguments;
+    clearTimeout(timer);
+
+    timer = setTimeout(function() {
+      callback.apply(context, args);
+    }, delay);
+  }
 }
