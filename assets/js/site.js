@@ -89,6 +89,7 @@ function cartAddProduct(name, quantity=1) {
   }
 
   updateCartLink();
+  updatePopupList();
   saveCartToStorage();
   return true;
 }
@@ -111,7 +112,6 @@ function cartSetProductQuantity(name, quantity=1) {
   cart[name] = quantity;
 
   updateCartLink();
-  updatePopupList();
   saveCartToStorage();
   return true;
 }
