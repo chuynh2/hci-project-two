@@ -368,6 +368,7 @@ addCartButton.forEach(item => {
 });
 
 function showPopup(event) {
+  window.scrollTo(0, 0);
   updatePopupList(this);
   this.classList.add('added-item');
   cartPopup.setAttribute('aria-hidden', 'false');
@@ -382,7 +383,6 @@ function showPopup(event) {
     successMessage.innerHTML= templateHTML;
     cartPopup.prepend(successMessage);
   }
-
 }
 
 function closePopup(){
