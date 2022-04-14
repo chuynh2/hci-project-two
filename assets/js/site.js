@@ -400,3 +400,16 @@ function addProductsToPopup() {
     popupList.appendChild(product);
   }
 }
+
+function debounce(callback, delay) {
+  var timer;
+  return function() {
+    var context = this;
+    var args = arguments;
+    clearTimeout(timer);
+
+    timer = setTimeout(function() {
+      callback.apply(context, args);
+    }, delay);
+  }
+}
