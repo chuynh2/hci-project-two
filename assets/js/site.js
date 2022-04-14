@@ -34,7 +34,7 @@ var cartProducts = {
     desc: "This certification will turn you into a ethical hacker.",
     price: 300
   },
-  "White Hacker Certification": {
+  "White Hat Hacker Certification": {
     desc: "This certification will turn you into a white hacker.",
     price: 450
   },
@@ -42,11 +42,11 @@ var cartProducts = {
     desc: "This certification will turn you into a teacher hacker.",
     price: 250
   },
-  "Penetration Hacker Certification": {
+  "Penetration Tester Certification": {
     desc: "This certification will turn you into a penetration hacker.",
     price: 200
   },
-  "Offensive Hacker Certification": {
+  "Offensive Security Certification": {
     desc: "This certification will turn you into a offensive hacker.",
     price: 350
   }
