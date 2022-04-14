@@ -358,6 +358,8 @@ var cartPopup = document.querySelector("#cart-popup");
 cartPopup.setAttribute('aria-hidden', 'true');
 cartPopup.setAttribute('disabled', 'disabled');
 
+addProductsToPopup();
+
 var addCartButton = document.querySelectorAll(".add-to-cart");
 addCartButton.forEach(item => {
   item.addEventListener("click", showPopup);
@@ -374,4 +376,27 @@ function closePopup(){
   this.classList.remove('added-item');
   cartPopup.setAttribute('aria-hidden', 'true');
   cartPopup.setAttribute('disabled', 'disabled');
+}
+
+function addProductsToPopup() {
+  let templateHTML = `
+    <ul>
+      <li class="popup-img">
+        <img class="icon" src="../assets/img/trophy.png" alt="Certificate Image">
+      </li>
+      <li class="popup-title"></li>
+      <li class="popup-count"></li>
+      <li class="popup-price"></li>
+    </ul>`;
+
+  var popupList = document.querySelector("#cart-popup ol");
+  for (const [title, count] of Object.entries(cart)) {
+    var product = document.createElement("li");
+    product.className = "popup-product";
+    product.innerHTML = templateHTML;
+    product.querySelector(".popup-title").innerText= title;
+    product.querySelector(".popup-count").innerText= "Quantity: " + count;
+    product.querySelector(".popup-price").innerText= "$" + (cartProducts[title].price*count);
+    popupList.appendChild(product);
+  }
 }
