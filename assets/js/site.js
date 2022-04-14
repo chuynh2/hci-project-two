@@ -111,6 +111,7 @@ function cartSetProductQuantity(name, quantity=1) {
   cart[name] = quantity;
 
   updateCartLink();
+  updatePopupList();
   saveCartToStorage();
   return true;
 }
@@ -367,6 +368,7 @@ addCartButton.forEach(item => {
 });
 
 function showPopup(event) {
+  updatePopupList(this);
   this.classList.add('added-item');
   cartPopup.setAttribute('aria-hidden', 'false');
   cartPopup.removeAttribute('disabled');
@@ -399,6 +401,14 @@ function addProductsToPopup() {
     product.querySelector(".popup-price").innerText= "$" + (cartProducts[title].price*count);
     popupList.appendChild(product);
   }
+}
+
+function updatePopupList() {
+  var popupProducts = document.querySelectorAll("#cart-popup ol li");
+  popupProducts.forEach(item => {
+    item.remove();
+  });
+  addProductsToPopup();
 }
 
 function debounce(callback, delay) {
