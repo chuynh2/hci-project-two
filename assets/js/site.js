@@ -372,12 +372,24 @@ function showPopup(event) {
   this.classList.add('added-item');
   cartPopup.setAttribute('aria-hidden', 'false');
   cartPopup.removeAttribute('disabled');
+
+  let templateHTML = `
+      <img src="assets/img/checked.png" alt="success tick logo"/>
+      <figcaption class="nav-heading current-page-heading">Added to cart</figcaption>`;
+  if(!document.getElementById("success-message")){
+    var successMessage = document.createElement("figure");
+    successMessage.setAttribute("id", "success-message");
+    successMessage.innerHTML= templateHTML;
+    cartPopup.prepend(successMessage);
+  }
+
 }
 
 function closePopup(){
   this.classList.remove('added-item');
   cartPopup.setAttribute('aria-hidden', 'true');
   cartPopup.setAttribute('disabled', 'disabled');
+  document.querySelector("#success-message").remove();
 }
 
 function addProductsToPopup() {
