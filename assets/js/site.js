@@ -351,3 +351,27 @@ if (pageForm && pageForm.id == "checkout") { // Apply to checkout webpage
     toggleBillingAddressValidation(billingCheckbox.checked)
   })
 }
+
+
+// === Cart Popup ===
+var cartPopup = document.querySelector("#cart-popup");
+cartPopup.setAttribute('aria-hidden', 'true');
+cartPopup.setAttribute('disabled', 'disabled');
+
+var addCartButton = document.querySelectorAll(".add-to-cart");
+addCartButton.forEach(item => {
+  item.addEventListener("click", showPopup);
+  item.addEventListener("click", debounce(closePopup, 3000));
+});
+
+function showPopup(event) {
+  this.classList.add('added-item');
+  cartPopup.setAttribute('aria-hidden', 'false');
+  cartPopup.removeAttribute('disabled');
+}
+
+function closePopup(){
+  this.classList.remove('added-item');
+  cartPopup.setAttribute('aria-hidden', 'true');
+  cartPopup.setAttribute('disabled', 'disabled');
+}
