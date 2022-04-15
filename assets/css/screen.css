@@ -303,6 +303,10 @@ input {
 input {
   padding: .5em;
 }
+input [type = text], select{
+  margin-top: 0.23em;
+  padding: .5em;
+}
 
 #phone-s {
   width: 10em
