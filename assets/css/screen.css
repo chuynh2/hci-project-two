@@ -197,6 +197,7 @@ a:hover, .remove:hover, .edit:hover {
 #directions #check-out, #checkout-btn {
   color: white;
   background-color: var(--red);
+  font-size: 1em; /* Fix checkout button's weird look */
 }
 
 #cart-summary header {
