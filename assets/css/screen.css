@@ -312,7 +312,7 @@ input [type = "text"], select {
   border-radius: 0.1875em;
   background-color: transparent;
 }
-input[type="submit"], input[type="button"]  {
+input[type="submit"], input[type="button"] {
   font-family: inherit;
   cursor: pointer;
 }
@@ -530,7 +530,7 @@ input[type="submit"], input[type="button"]  {
     width: 25%;
   }
 
-  .form-body{
+  .form-body {
     width: 50%;
   }
 }
