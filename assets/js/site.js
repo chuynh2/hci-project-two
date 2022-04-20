@@ -396,7 +396,7 @@ function addProductsToPopup() {
   let templateHTML = `
     <ul>
       <li class="popup-img">
-        <img class="icon" src="../assets/img/trophy.png" alt="Certificate Image">
+        <img class="icon" src="assets/img/trophy.png" alt="Certificate Image">
       </li>
       <li class="popup-title"></li>
       <li class="popup-count"></li>
