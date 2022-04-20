@@ -394,7 +394,7 @@ input [type="submit"] {
   background-color: var(--light-color);
   box-shadow: 0.4em 0.4em 0.3em -0.5em #aaa, -0.4em -0.4em 0.3em -0.5em #aaa;
   display: grid;
-  grid-template: repeat(3,auto) / 10% 80% 10%;
+  grid-template: repeat(3,auto) / 3% 94% 3%;
   grid-row-gap: 0.25em;
   font-size: 0.5em;
   position: absolute;
@@ -421,8 +421,9 @@ input [type="submit"] {
 
 }
 #cart-popup img {
-  width: 100%;
+  width: 85%;
   height: auto;
+  border-radius: 0.3em;
 }
 
 #cart-popup .popup-img {
@@ -458,13 +459,14 @@ input [type="submit"] {
 
   #cart-popup .popup-product ul {
     display: grid;
-    grid-template: repeat(2, auto) / repeat(3, 1fr);
-    grid-column-gap: 0.2em;
+    font-size: 0.9em;
+    grid-template: repeat(3, auto) / repeat(3, 1fr);
+    grid-row-gap: 1em;
   }
   #cart-popup .popup-img {
     display: block;
     grid-column: 1;
-    grid-row: span 2;
+    grid-row: span 3;
   }
   #cart-popup .popup-title {
     grid-column: 2/ span 2;
@@ -517,8 +519,8 @@ input [type="submit"] {
 
   #cart-popup {
     font-size: 0.75em;
-    min-width: 25em; /* 400px */
-    width: 30%;
+    min-width: 20em; /* 400px */
+    width: 25%;
   }
 }
 
