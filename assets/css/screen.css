@@ -307,6 +307,9 @@ input {
 input [type = "text"], select {
   margin-top: 0.23em;
   padding: 0.5em;
+  border: 0.0625em solid #7e7e7e;
+  border-radius: 0.1875em;
+  background-color: transparent;
 }
 input[type="submit"], input[type="button"]  {
   font-family: inherit;
@@ -525,6 +528,7 @@ input[type="submit"], input[type="button"]  {
     min-width: 20em; /* 400px */
     width: 25%;
   }
+
 }
 
 
