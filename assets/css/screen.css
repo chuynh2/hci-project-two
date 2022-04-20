@@ -261,6 +261,7 @@ section > header, #cart-items > header {
 
 .form-body li label {
   flex-basis: 20%;
+  margin-top: 0.3em;
 }
 
 .form-body li input {
@@ -529,6 +530,9 @@ input[type="submit"], input[type="button"]  {
     width: 25%;
   }
 
+  .form-body{
+    width: 50%;
+  }
 }
 
 
