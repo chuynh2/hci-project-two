@@ -192,7 +192,7 @@ function updateSummary() {
 
   totValueElem.textContent = `$${total}`
   subtotValueElem.textContent = `$${subtotal}`
-  feeValueElem.textContent = `$${fee}`
+  feeValueElem.textContent = getCartSize() ? `$${fee}` : `$0`
   taxValueElem.textContent = `$${tax}`
 }
 
