@@ -54,6 +54,7 @@ var cartProducts = {
 
 var cart = loadCartFromStorage();
 updateCartLink();
+updateItemAmount();
 
 // ======================================
 // ===== LocalStorage Functionality =====
@@ -89,6 +90,7 @@ function cartAddProduct(name, quantity=1) {
   }
 
   updateCartLink();
+  updateItemAmount();
   updatePopupList();
   saveCartToStorage();
   return true;
@@ -101,6 +103,7 @@ function cartRemoveProduct(name) {
   delete cart[name];
 
   updateCartLink();
+  updateItemAmount();
   saveCartToStorage();
   return true;
 }
@@ -112,6 +115,7 @@ function cartSetProductQuantity(name, quantity=1) {
   cart[name] = quantity;
 
   updateCartLink();
+  updateItemAmount();
   saveCartToStorage();
   return true;
 }
@@ -136,6 +140,13 @@ function updateCartLink() {
     if (link.getAttribute("href") === "./cart/")
       link.innerHTML = cartSize > 0 ? `Cart (${getCartSize()})` : "Cart";
   })
+}
+
+function updateItemAmount() {
+  let cartSize = getCartSize();
+  let cartTitle = document.querySelector("#cart-items-container h1");
+  cartTitle.innerHTML = cartSize > 1 ? `Shopping Cart(${getCartSize()} Items)`
+                                      :`Shopping Cart(${getCartSize()} Item)`;
 }
 
 // ==========================
