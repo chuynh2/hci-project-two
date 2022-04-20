@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Nunito&display=swap");
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -16,11 +17,14 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 }
 
 header {
-  font: 1em 'DM Serif Display', serif;
+  font: 1em "DM Serif Display", serif;
+  font-size: 1.5em;
+  text-decoration: none;
 }
 
 section {
-  font: 1em 'Nunito', sans-serif;
+  font: Nunito, sans-serif;
+  font-size: 1em;
   margin-bottom: 1em;
 }
 
@@ -83,7 +87,7 @@ form > section, main > section {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  border-radius: 2px;
+  border-radius: 0.125em; /*2px / 16px */
 }
 
 #cart-items-container, #shipping-container, #billing-container {
@@ -118,7 +122,7 @@ main > section, #cart-items, #cart-summary, #shipping, #billing, .products {
 .cart-item {
   display: grid;
   grid-template-columns: min-content auto;
-  margin-top: .5em;
+  margin-top: 0.5em;
 }
 
 .cart-item .icon, .product-image {
@@ -165,7 +169,7 @@ main > section, #cart-items, #cart-summary, #shipping, #billing, .products {
 }
 
 .remove, .edit {
-  color: red
+  color: red;
 }
 
 a:hover, .remove:hover, .edit:hover {
@@ -181,10 +185,10 @@ a:hover, .remove:hover, .edit:hover {
   font-weight: 500;
   color: var(--red);
   background-color: white;
-  border-radius: 3px;
-  border: 1px solid var(--red);
-  padding: 1em 2em;
-  margin: 2px;
+  border-radius: 0.1875em;
+  border: 0.0625em solid var(--red);
+  padding: 0.0625em 2em;
+  margin: 0.125em;
   text-align: center;
 }
 
@@ -208,9 +212,9 @@ a:hover, .remove:hover, .edit:hover {
   display: flex;
   flex-direction: column;
   padding: 1em 0 1em 0;
-  margin-top: .25em;
-  border-top: .1em solid var(--dark-color);
-  border-bottom: .1em solid var(--dark-color);
+  margin-top: 0.25em;
+  border-top: 0.1em solid var(--dark-color);
+  border-bottom: 0.1em solid var(--dark-color);
 }
 
 #cost-listing li, #total li {
@@ -220,7 +224,7 @@ a:hover, .remove:hover, .edit:hover {
 
 #cost-listing li p, #total li p {
   flex-basis: 50%;
-  margin: .2em 0 .2em 0;
+  margin: 0.2em 0 0.2em 0;
 }
 
 #total {
@@ -238,19 +242,19 @@ a:hover, .remove:hover, .edit:hover {
 
 section > header, #cart-items > header {
   font-weight: 600;
-  margin-bottom: .25em;
+  margin-bottom: 0.25em;
 }
 
 .form-body {
   display: flex;
   flex-direction: column;
-  margin-left: .75em;
+  margin-left: 0.75em;
 }
 
 .form-body li {
   display: flex;
   flex-direction: column;
-  margin-top: .5em;
+  margin-top: 0.5em;
 }
 
 .form-body li label {
@@ -261,21 +265,17 @@ section > header, #cart-items > header {
   flex-basis: 80%;
 }
 
-.form-body  {
-  display: flex;
-}
-
 .location {
   display: flex;
   flex-basis: 100%;
   flex-direction: column;
-  margin-top: .5em;
+  margin-top: 0.5em;
 }
 
 .location li {
   flex-direction: column;
-  margin-top: .3em;
-  margin-right: .2em;
+  margin-top: 0.3em;
+  margin-right: 0.2em;
 }
 
 .location li:nth-child(n) {
@@ -290,31 +290,29 @@ section > header, #cart-items > header {
   margin-top: 1em;
 }
 
-#show-address-b:not(:checked) ~ #address-b-form  {
+#show-address-b:not(:checked) ~ #address-b-form {
   visibility: collapse;
-  display: none
+  display: none;
 }
 
 input {
-  border: 1px solid #7e7e7e;
-  border-radius: 3px;
-  margin-top: .2em;
+  border: 0.0625em solid #7e7e7e;
+  border-radius: 0.1875em;
+  margin-top: 0.2em;
+  padding: 0.5em;
 }
 
-input {
-  padding: .5em;
-}
-input [type = text], select{
+input [type = "text"], select {
   margin-top: 0.23em;
-  padding: .5em;
+  padding: 0.5em;
 }
 
 #phone-s {
-  width: 10em
+  width: 10em;
 }
 
 #cvv {
-  width: 5em
+  width: 5em;
 }
 
 #homescreen {
@@ -334,12 +332,7 @@ input [type = text], select{
 }
 
 #order-confirmation section {
- flex-basis: 100%;
-}
-
-header {
-  font-size: 1.5em;
-  text-decoration: none;
+  flex-basis: 100%;
 }
 
 #order-confirmation p {
@@ -347,13 +340,8 @@ header {
   text-decoration: none;
 }
 
-#certifications {
-  //background-color: transparent;
-}
-
-.products{
-    box-shadow: 0.3em 0.3em 0.5em -0.5em #aaa,
-    -0.3em -0.3em 0.3em -0.5em #aaa;
+.products {
+  box-shadow: 0.3em 0.3em 0.5em -0.5em #aaa, -0.3em -0.3em 0.3em -0.5em #aaa;
 
 }
 .product-image {
@@ -374,8 +362,8 @@ header {
 
 .add-to-cart {
   background: none;
-  border: 1px solid #aaa;
-  border-radius: 2px;
+  border: 0.0625em solid #aaa;
+  border-radius: 0.125em;
   cursor: pointer;
   font-family: inherit;
 }
@@ -394,8 +382,7 @@ header {
 
 #cart-popup {
   background-color: var(--light-color);
-  box-shadow: 0.4em 0.4em 0.3em -0.5em #aaa,
-  -0.4em -0.4em 0.3em -0.5em #aaa;
+  box-shadow: 0.4em 0.4em 0.3em -0.5em #aaa, -0.4em -0.4em 0.3em -0.5em #aaa;
   display: grid;
   grid-template: repeat(3,auto) / 10% 80% 10%;
   grid-row-gap: 0.25em;
@@ -428,7 +415,7 @@ header {
   height: auto;
 }
 
-#cart-popup .popup-img{
+#cart-popup .popup-img {
   display: none;
 }
 
@@ -459,26 +446,26 @@ header {
     font-size: 0.5em;
   }
 
-  #cart-popup .popup-product ul{
+  #cart-popup .popup-product ul {
     display: grid;
     grid-template: repeat(2, auto) / repeat(3, 1fr);
-    grid-column-gap: 0.20em;
+    grid-column-gap: 0.2em;
   }
-  #cart-popup .popup-img{
+  #cart-popup .popup-img {
     display: block;
     grid-column: 1;
     grid-row: span 2;
   }
-  #cart-popup .popup-title{
+  #cart-popup .popup-title {
     grid-column: 2/ span 2;
     grid-row: 1;
   }
-  #cart-popup .popup-count{
+  #cart-popup .popup-count {
     grid-column: 2;
     grid-row: 2;
     justify-self: top;
   }
-  #cart-popup .popup-price{
+  #cart-popup .popup-price {
     grid-column: 3;
     grid-row: 2;
   }
@@ -528,7 +515,7 @@ header {
 
 @media screen and (min-width: 75em) { /* 1200 px, 16 pt */
   #billing-container {
-    order: 3
+    order: 3;
   }
 
   #cart-items, #cart-summary, #shipping, #billing {
@@ -545,8 +532,8 @@ header {
 
   .location li {
     flex-direction: column;
-    margin-top: .0;
-    margin-right: .2em;
+    margin-top: 0;
+    margin-right: 0.2em;
   }
 
   #cart-summary-container {
