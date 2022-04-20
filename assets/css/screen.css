@@ -17,13 +17,13 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 }
 
 header {
-  font: 1em "DM Serif Display", serif;
+  font-family: "DM Serif Display", serif;
   font-size: 1.5em;
   text-decoration: none;
 }
 
 section {
-  font: Nunito, sans-serif;
+  font-family: Nunito, sans-serif;
   font-size: 1em;
   margin-bottom: 1em;
 }
@@ -305,6 +305,9 @@ input {
 input [type = "text"], select {
   margin-top: 0.23em;
   padding: 0.5em;
+}
+input [type="submit"] {
+  font-family: inherit;
 }
 
 #phone-s {
