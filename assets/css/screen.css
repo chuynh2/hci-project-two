@@ -356,11 +356,17 @@ input [type="submit"] {
 }
 .product-detail {
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.product-description {
+  padding: 0.5em 0;
 }
 .product-misc {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
 }
 
 .add-to-cart {
