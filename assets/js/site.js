@@ -190,7 +190,7 @@ function updateSummary() {
   tax = subtotal * (6.25/100) // 6.25% fee
   total = subtotal + tax + fee;
 
-  totValueElem.textContent = `$${total}`
+  totValueElem.textContent = getCartSize() ? `$${total}` : `$0`
   subtotValueElem.textContent = `$${subtotal}`
   feeValueElem.textContent = getCartSize() ? `$${fee}` : `$0`
   taxValueElem.textContent = `$${tax}`
@@ -334,8 +334,14 @@ if (pageForm && pageForm.id == "cart") {
     let quantityElem = item.querySelector(".quantity");
 
     quantityElem.addEventListener("change", function(event) {
-      cartSetProductQuantity(productName, parseInt(event.target.value)); // parseInt() to avoid causing errors when displaying cart size
-      updateSummary();
+      let newQuantity = parseInt(this.value)
+      if (newQuantity == 0) {
+        pageRemoveProduct(item);
+        cartRemoveProduct(productName);
+      } else {
+        cartSetProductQuantity(productName, newQuantity); // parseInt() to avoid causing errors when displaying cart size
+      }
+        updateSummary();
     })
   })
 
