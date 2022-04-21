@@ -349,7 +349,8 @@ if (pageForm && pageForm.id == "cart") {
   let contButton = document.getElementById("check-out")
   contButton.addEventListener("click", function(event) {
     if (!getCartSize()) {
-      console.log("YOU SHAL NOT PASS")
+      showNotif(event)
+      debounce(closeNotif, 2000)()
       event.preventDefault()
     }
   })
@@ -451,6 +452,35 @@ function updatePopupList() {
     item.remove();
   });
   addProductsToPopup();
+}
+
+// === Cart Notif Message ===
+var notifPopup = document.querySelector("#notif-popup");
+if (notifPopup) {
+  notifPopup.setAttribute('aria-hidden', 'true');
+  notifPopup.setAttribute('disabled', 'disabled');
+}
+
+function showNotif(event) {
+  window.scrollTo(0, 0);
+  notifPopup.setAttribute('aria-hidden', 'false');
+  notifPopup.removeAttribute('disabled');
+
+  let templateHTML = `
+      <img src="../assets/img/error.png" alt="error big red X"/>
+      <figcaption class="nav-heading current-page-heading">Cart is empty</figcaption>`;
+  if(!document.getElementById("notif-message")){
+    var notifMessage = document.createElement("figure");
+    notifMessage.setAttribute("id", "notif-message");
+    notifMessage.innerHTML= templateHTML;
+    notifPopup.prepend(notifMessage);
+  }
+}
+
+function closeNotif() {
+  notifPopup.setAttribute('aria-hidden', 'true');
+  notifPopup.setAttribute('disabled', 'disabled');
+  document.querySelector("#notif-message").remove();
 }
 
 var debounceCallLevel = 0;
