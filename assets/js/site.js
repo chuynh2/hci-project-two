@@ -190,7 +190,7 @@ function updateSummary() {
   tax = subtotal * (6.25/100) // 6.25% fee
   total = subtotal + tax + fee;
 
-  totValueElem.textContent = `$${total}`
+  totValueElem.textContent = getCartSize() ? `$${total}` : `$0`
   subtotValueElem.textContent = `$${subtotal}`
   feeValueElem.textContent = getCartSize() ? `$${fee}` : `$0`
   taxValueElem.textContent = `$${tax}`
@@ -334,9 +334,25 @@ if (pageForm && pageForm.id == "cart") {
     let quantityElem = item.querySelector(".quantity");
 
     quantityElem.addEventListener("change", function(event) {
-      cartSetProductQuantity(productName, parseInt(event.target.value)); // parseInt() to avoid causing errors when displaying cart size
-      updateSummary();
+      let newQuantity = parseInt(this.value)
+      if (newQuantity == 0) {
+        pageRemoveProduct(item);
+        cartRemoveProduct(productName);
+      } else {
+        cartSetProductQuantity(productName, newQuantity); // parseInt() to avoid causing errors when displaying cart size
+      }
+        updateSummary();
     })
+  })
+
+  // == PREVENT CONTINUE /w EMPTY CART ==
+  let contButton = document.getElementById("check-out")
+  contButton.addEventListener("click", function(event) {
+    if (!getCartSize()) {
+      showNotif(event)
+      debounce(closeNotif, 2000)()
+      event.preventDefault()
+    }
   })
 
   updateSummary(); // Update summary display
@@ -438,15 +454,55 @@ function updatePopupList() {
   addProductsToPopup();
 }
 
+// === Cart Notif Message ===
+var notifPopup = document.querySelector("#notif-popup");
+if (notifPopup) {
+  notifPopup.setAttribute('aria-hidden', 'true');
+  notifPopup.setAttribute('disabled', 'disabled');
+}
+
+function showNotif(event) {
+  window.scrollTo(0, 0);
+  notifPopup.setAttribute('aria-hidden', 'false');
+  notifPopup.removeAttribute('disabled');
+
+  let templateHTML = `
+      <img src="../assets/img/error.png" alt="error big red X"/>
+      <figcaption class="nav-heading current-page-heading">Cart is empty</figcaption>`;
+  if(!document.getElementById("notif-message")){
+    var notifMessage = document.createElement("figure");
+    notifMessage.setAttribute("id", "notif-message");
+    notifMessage.innerHTML= templateHTML;
+    notifPopup.prepend(notifMessage);
+  }
+}
+
+function closeNotif() {
+  notifPopup.setAttribute('aria-hidden', 'true');
+  notifPopup.setAttribute('disabled', 'disabled');
+  document.querySelector("#notif-message").remove();
+}
+
+var debounceCallLevel = 0;
+var debounceContext = null;
+var debounceArgs = null;
 function debounce(callback, delay) {
   var timer;
   return function() {
-    var context = this;
-    var args = arguments;
+    if (debounceCallLevel == 0) { // Save context on first button press
+      debounceContext = this;
+      debounceArgs = arguments;
+    }
+
+    debounceCallLevel += 1 // Increment call level
+    let myDebounceLevel = debounceCallLevel // Save current call level
     clearTimeout(timer);
 
     timer = setTimeout(function() {
-      callback.apply(context, args);
+      if (debounceCallLevel == myDebounceLevel) { // Update when nothing else was pressed
+        callback.apply(debounceContext, debounceArgs);
+        debounceCallLevel = 0 // Reset call levels
+      }
     }, delay);
   }
 }
