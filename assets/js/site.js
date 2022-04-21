@@ -345,6 +345,15 @@ if (pageForm && pageForm.id == "cart") {
     })
   })
 
+  // == PREVENT CONTINUE /w EMPTY CART ==
+  let contButton = document.getElementById("check-out")
+  contButton.addEventListener("click", function(event) {
+    if (!getCartSize()) {
+      console.log("YOU SHAL NOT PASS")
+      event.preventDefault()
+    }
+  })
+
   updateSummary(); // Update summary display
 }
 
@@ -444,15 +453,26 @@ function updatePopupList() {
   addProductsToPopup();
 }
 
+var debounceCallLevel = 0;
+var debounceContext = null;
+var debounceArgs = null;
 function debounce(callback, delay) {
   var timer;
   return function() {
-    var context = this;
-    var args = arguments;
+    if (debounceCallLevel == 0) { // Save context on first button press
+      debounceContext = this;
+      debounceArgs = arguments;
+    }
+
+    debounceCallLevel += 1 // Increment call level
+    let myDebounceLevel = debounceCallLevel // Save current call level
     clearTimeout(timer);
 
     timer = setTimeout(function() {
-      callback.apply(context, args);
+      if (debounceCallLevel == myDebounceLevel) { // Update when nothing else was pressed
+        callback.apply(debounceContext, debounceArgs);
+        debounceCallLevel = 0 // Reset call levels
+      }
     }, delay);
   }
 }
