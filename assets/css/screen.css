@@ -548,7 +548,7 @@ input[type="submit"], input[type="button"] {
 
 @media screen and (min-width: 25.9375em) { /* 415 px, 16 pt */
   #pages {
-    margin-left: auto;
+    margin: 0 0 0 auto; /* margin-left: auto */
   }
 
   nav > ol {
