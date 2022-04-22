@@ -21,19 +21,19 @@
   "scenarios": [
     {
       "label": "Home",
-      "url": "http://localhost:5500/hci-project-one/"
+      "url": "http://localhost:5500/"
     },
     {
       "label": "Cart",
-      "url": "http://localhost:5500/hci-project-one/cart"
+      "url": "http://localhost:5500/cart"
     },
     {
       "label": "Checkout",
-      "url": "http://localhost:5500/hci-project-one/checkout"
+      "url": "http://localhost:5500/checkout"
     },
     {
       "label": "Confirmation",
-      "url": "http://localhost:5500/hci-project-one/order-confirmation"
+      "url": "http://localhost:5500/order-confirmation"
     }
   ],
   "paths": {
